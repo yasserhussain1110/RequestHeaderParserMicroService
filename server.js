@@ -16,11 +16,16 @@ var server = http.createServer(function(req, res){
     var language = req.headers["accept-language"].replace(/[;,].*/, '')
     var headers = req.headers;
 
-    res.write(JSON.stringify({
+    var body = JSON.stringify({
       language: language,
       os: agent.os.family,
       ipaddress: ip
-    }));
+    });
+
+    res.writeHead(200, {
+      'Content-Length': Buffer.byteLength(body),
+      'Content-Type': 'application/json' });
+    res.write(body);
     res.end();
   } else {
     res.writeHead(404);
