@@ -13,8 +13,7 @@ var server = http.createServer(function(req, res){
     ip = ip.replace(/^::ffff:/, '');
 
     var agent = useragent.parse(req.headers['user-agent']);
-    var language = req.headers["accept-language"].replace(/[;,].*/, '')
-    var headers = req.headers;
+    var language = req.headers["accept-language"].replace(/[;,].*/, '');
 
     var body = JSON.stringify({
       language: language,
