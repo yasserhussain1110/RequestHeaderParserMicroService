@@ -1,0 +1,19 @@
+{
+  "name": "request-header-parser",
+  "version": "1.0.0",
+  "description": "A microservice which parses request header",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "http-server",
+    "node",
+    "http-header"
+  ],
+  "author": "Yasser Hussain",
+  "license": "MIT",
+  "dependencies": {
+    "useragent": "^2.1.9"
+  }
+}
