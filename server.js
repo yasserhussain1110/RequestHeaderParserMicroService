@@ -10,7 +10,9 @@ var server = http.createServer(function(req, res){
       req.socket.remoteAddress ||
       req.connection.socket.remoteAddress;
 
-    ip = ip.replace(/^::ffff:/, '');
+    ip = ip
+          .replace(/^::ffff:/, '')
+          .replace(/,.*/, '');
 
     var agent = useragent.parse(req.headers['user-agent']);
     var language = req.headers["accept-language"].replace(/[;,].*/, '');
